@@ -2,12 +2,15 @@
 
 $logs = glob( __DIR__ . '/logs/*/*.csv' );
 $raw = array();
+$all = array();
 
 foreach ( $logs as $log ) {
 	$handle = fopen( $log, 'r' );
 	$modem = basename( dirname( $log ) );
 
 	while ( ( $data = fgetcsv( $handle, 1000, ',' ) ) !== false ) {
+		$all[ $modem ][] = $data;
+
 		$raw[ $modem ]['timestamp'][] = $data[0];
 		$raw[ $modem ]['download'][] = $data[2];
 		$raw[ $modem ]['upload'][] = $data[3];
@@ -18,6 +21,15 @@ foreach ( $logs as $log ) {
 }
 
 $totals = array();
+
+foreach ( $all as $modem => $logs ) {
+	$fp = fopen( __DIR__ . '/logs/' . $modem . '.csv', 'w' );
+
+	foreach ( $logs as $log )
+		fputcsv( $fp, $log );
+
+	fclose($fp);
+}
 
 foreach ( $raw as $modem => $logs ) {
 	$totals = array(
