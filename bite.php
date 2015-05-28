@@ -1,5 +1,10 @@
 <?php
 
+$arp = shell_exec('arp -n');
+
+if ( false === stripos( $arp, '58:7f:66:c9:45:b2' ) )
+	die( 'Error: could not find Bite router.' );
+
 exec( '/usr/local/bin/speedtest-cli --simple --server 5834 --share', $results );
 
 syslog( LOG_NOTICE, implode( '|', $results ) );
