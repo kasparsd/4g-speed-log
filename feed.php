@@ -26,7 +26,7 @@ foreach ( $logs as $log ) {
 				$data[2],
 				$data[3],
 				$data[1],
-				date( 'H:m', strtotime( $data[0] ) )
+				date( 'H:i', strtotime( $data[0] ) )
 			),
 			'link' => $data[4],
 			'description' => '',
