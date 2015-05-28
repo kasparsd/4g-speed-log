@@ -21,7 +21,7 @@ foreach ( $logs as $log ) {
 			'guid' => $modem . $time,
 			'pubDate' => date( 'r', $time ),
 			'title' => sprintf(
-				'%s #4G mājas internets lejup %s, augšup %s un ping %s plkst. %s #speedtest',
+				'%s #4G mājas internets %s lejup, %s augšup un %s ping plkst. %s #speedtest',
 				$twitter,
 				$data[2],
 				$data[3],
