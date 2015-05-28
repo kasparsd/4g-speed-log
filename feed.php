@@ -5,7 +5,7 @@ $raw = array();
 
 foreach ( $logs as $log ) {
 	$handle = fopen( $log, 'r' );
-	
+
 	$twi = array(
 		'lmt' => '#manslmt',
 		'bite' => '#bitelv',
@@ -21,7 +21,7 @@ foreach ( $logs as $log ) {
 			'guid' => $modem . $time,
 			'pubDate' => date( 'r', $time ),
 			'title' => sprintf(
-				'%s #4G mājas interneta lejuplāde %s, augšuplāde %s un ping %s plkst. %s',
+				'%s #4G mājas interneta lejuplāde %s, augšuplāde %s un ping %s plkst. %s #speedtest',
 				$twitter,
 				$data[2],
 				$data[3],
