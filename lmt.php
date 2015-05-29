@@ -1,12 +1,19 @@
 <?php
 
-return;
+$arp = shell_exec('ping -b -c 1 192.168.1.1 && /usr/sbin/arp -n');
 
-exec( '/usr/local/bin/speedtest-cli --simple --share', $results );
+if ( false === stripos( $arp, '38:f8:89:01:e2:d0' ) ) {
+	syslog( LOG_ERR, 'LMT router not found' );
+	die;
+}
+
+exec( '/usr/local/bin/speedtest-cli --simple --server 2148 --share', $results );
 
 if ( count( $results ) < 3 ) {
-	print_r($results);
+	syslog( LOG_ERR, 'LMT Speedtest failed: ' . implode( '|', $results ) );
 	die;
+} else {
+	syslog( LOG_NOTICE, 'LMT Speedtest OK: ' . implode( '|', $results ) );
 }
 
 $o = array(
