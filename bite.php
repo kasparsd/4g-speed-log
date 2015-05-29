@@ -12,10 +12,10 @@ if ( false === stripos( $arp, '58:7f:66:c9:45:b2' ) ) {
 exec( '/usr/local/bin/speedtest-cli --simple --server 5834 --share', $results );
 
 if ( count( $results ) < 3 ) {
-	syslog( LOG_ERR, 'Speedtest failed: ' . implode( '|', $results ) );
+	syslog( LOG_ERR, 'Bite Speedtest failed: ' . implode( '|', $results ) );
 	die;
 } else {
-	syslog( LOG_NOTICE, 'Speedtest OK: ' . implode( '|', $results ) );
+	syslog( LOG_NOTICE, 'Bite Speedtest OK: ' . implode( '|', $results ) );
 }
 
 $o = array(
