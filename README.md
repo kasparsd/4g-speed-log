@@ -17,3 +17,11 @@ Logs are tweeted live at [@4Ginternets](https://twitter.com/4Ginternets). Full a
 ## How it Works
 
 Raspberry Pi is connected to the LAN port of the modem and is running a cron job every 10 minutes that runs the Speedtest.net measurement using [speedtest-cli](https://github.com/sivel/speedtest-cli).
+
+### Cron Jobs
+
+    */30 * * * * php /home/pi/speedtest/lmt.php
+    */30 * * * * php /home/pi/speedtest/bite.php
+    */2 * * * * php /home/pi/speedtest/feed.php
+    */2 * * * * php /home/pi/speedtest/stats.php
+    * * * * * rsync -Lavz /home/pi/speedtest/logs/ kaspars@kaspars.net:~/4glv-logs
