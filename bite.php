@@ -1,17 +1,21 @@
 <?php
 
-$arp = shell_exec('arp -n');
+$failtouch = __DIR__ . '/.bitefailtouch';
 
-if ( false === stripos( $arp, '58:7f:66:c9:45:b2' ) )
-	die( 'Error: could not find Bite router.' );
+$arp = shell_exec('ping -b -c 1 192.168.8.1 && /usr/sbin/arp -n');
+
+if ( false === stripos( $arp, '58:7f:66:c9:45:b2' ) ) {
+	syslog( LOG_ERR, 'Bite router not found' );
+	die;
+}
 
 exec( '/usr/local/bin/speedtest-cli --simple --server 5834 --share', $results );
 
-syslog( LOG_NOTICE, implode( '|', $results ) );
-
 if ( count( $results ) < 3 ) {
-	print_r($results);
+	syslog( LOG_ERR, 'Speedtest failed: ' . implode( '|', $results ) );
 	die;
+} else {
+	syslog( LOG_NOTICE, 'Speedtest OK: ' . implode( '|', $results ) );
 }
 
 $o = array(
