@@ -20,19 +20,17 @@ $ping = exec( 'ping -c 3 ' . $domain );
 $down = exec( 'curl -o /dev/null -sS -w "%{speed_download}" ' . $url_down );
 $up = exec( 'curl -o /dev/null -sS -w "%{speed_upload}" --form "file_box=@random4000x4000.jpg" ' . $url_up );
 
-$log = array(
-	'timestamp' => date( 'Y-m-d H:i' ),
-);
-
 // Ping
 preg_match( '/= (.*) ms/', $ping, $r );
 $r = explode( '/', $r[1] );
-$log[ 'ping' ] = round( $r[1], 2 ) . ' ms';
+$log[ 'Ping' ] = round( $r[1], 2 ) . ' ms';
 
 // Download
-$log[ 'download' ] = round( $down * 0.000008, 2 ) . ' Mbit/s';
+$log[ 'Download' ] = round( $down * 0.000008, 2 ) . ' Mbit/s';
 
 // Upload
-$log[ 'upload' ] = round( $up * 0.000008, 2 ) . ' Mbit/s';
+$log[ 'Upload' ] = round( $up * 0.000008, 2 ) . ' Mbit/s';
 
-echo implode( ',', $log ) . PHP_EOL;
+// Output similar to speedtest-cli --simple
+foreach ( $log as $k => $v )
+	printf( "%s: %s\n", $k, $v );
