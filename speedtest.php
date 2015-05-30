@@ -17,8 +17,8 @@ if ( ! file_exists( __DIR__ . '/random4000x4000.jpg' ) ) {
 }
 
 $ping = exec( 'ping -c 3 ' . $domain );
-$down = exec( 'curl -o /dev/null -sS -w "%{speed_download}" ' . $url_down );
-$up = exec( 'curl -o /dev/null -sS -w "%{speed_upload}" --form "file_box=@random4000x4000.jpg" ' . $url_up );
+$down = exec( 'curl --interface eth0 -o /dev/null -sS -w "%{speed_download}" ' . $url_down );
+$up = exec( 'curl --interface eth0 -o /dev/null -sS -w "%{speed_upload}" --form "file_box=@random4000x4000.jpg" ' . $url_up );
 
 // Ping
 preg_match( '/= (.*) ms/', $ping, $r );
