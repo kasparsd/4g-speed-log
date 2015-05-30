@@ -9,7 +9,7 @@ if ( false === stripos( $arp, '58:7f:66:c9:45:b2' ) ) {
 	die;
 }
 
-exec( '/usr/local/bin/speedtest-cli --simple --server 5834 --share', $results );
+exec( 'php speedtest.php http://speedtest.bite.lv/speedtest', $results );
 
 if ( count( $results ) < 3 ) {
 	syslog( LOG_ERR, 'Bite Speedtest failed: ' . implode( '|', $results ) );
@@ -35,6 +35,10 @@ $filename = sprintf(
 	date('Ymd')
 );
 
-file_put_contents( $filename, implode( ',', array_values($o) ) . PHP_EOL, FILE_APPEND );
+file_put_contents(
+	$filename,
+	implode( ',', array_values($o) ) . PHP_EOL,
+	FILE_APPEND
+);
 
 print_r($o);
