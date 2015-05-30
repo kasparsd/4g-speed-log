@@ -28,7 +28,7 @@ foreach ( $logs as $log ) {
 				$data[1],
 				date( 'H:i', strtotime( $data[0] ) )
 			),
-			'link' => '',
+			'link' => 'https://github.com/kasparsd/4g-speed-log',
 			'description' => '',
 		);
 	}
