@@ -9,10 +9,10 @@ Logs are tweeted live at [@4Ginternets](https://twitter.com/4Ginternets). Full a
 
 ## Graphs & Charts
 
-![](https://raw.githubusercontent.com/kasparsd/4g-speed-log/master/preview.png)
+- [Bite 4G](http://www.charted.co/?%7B%22dataUrl%22%3A%22http%3A%2F%2Flog.kaspars.net%2Fpublic%2F4glv-logs%2Fbite.csv%22%2C%22seriesNames%22%3A%7B%220%22%3A%22Ping%20ms%22%2C%221%22%3A%22Download%20Mbit%2Fs%22%2C%222%22%3A%22Upload%20Mbit%2Fs%22%2C%223%22%3A%22Speedtest%22%7D%2C%22charts%22%3A%5B%7B%22title%22%3A%22Bite%C2%A04G%20internets%20m%C4%81jai%22%2C%22note%22%3A%22https%3A%2F%2Fgithub.com%2Fkasparsd%2F4g-speed-log%22%7D%5D%7D)
+- [LMT 4G](http://www.charted.co/?%7B%22dataUrl%22%3A%22http%3A%2F%2Flog.kaspars.net%2Fpublic%2F4glv-logs%2Flmt.csv%22%2C%22seriesNames%22%3A%7B%220%22%3A%22Ping%20ms%22%2C%221%22%3A%22Download%20Mbit%2Fs%22%2C%222%22%3A%22Upload%20Mbit%2Fs%22%7D%2C%22charts%22%3A%5B%7B%22title%22%3A%22LMT%204G%20internets%20m%C4%81jai%22%2C%22note%22%3A%22https%3A%2F%2Fgithub.com%2Fkasparsd%2F4g-speed-log%22%7D%5D%7D)
 
-- [Bite](http://www.charted.co/?%7B%22dataUrl%22%3A%22http%3A%2F%2Flog.kaspars.net%2Fpublic%2F4glv-logs%2Fbite.csv%22%2C%22seriesNames%22%3A%7B%220%22%3A%22Ping%20ms%22%2C%221%22%3A%22Download%20Mbit%2Fs%22%2C%222%22%3A%22Upload%20Mbit%2Fs%22%2C%223%22%3A%22Speedtest%22%7D%2C%22charts%22%3A%5B%7B%22title%22%3A%22Bite%C2%A04G%20internets%20m%C4%81jai%22%2C%22note%22%3A%22https%3A%2F%2Fgithub.com%2Fkasparsd%2F4g-speed-log%22%7D%5D%7D)
-- [LMT](http://www.charted.co/?%7B%22dataUrl%22%3A%22http%3A%2F%2Flog.kaspars.net%2Fpublic%2F4glv-logs%2Flmt.csv%22%2C%22seriesNames%22%3A%7B%220%22%3A%22Ping%20ms%22%2C%221%22%3A%22Download%20Mbit%2Fs%22%2C%222%22%3A%22Upload%20Mbit%2Fs%22%7D%2C%22charts%22%3A%5B%7B%22title%22%3A%22LMT%204G%20internets%20m%C4%81jai%22%2C%22note%22%3A%22https%3A%2F%2Fgithub.com%2Fkasparsd%2F4g-speed-log%22%7D%5D%7D)
+![](https://raw.githubusercontent.com/kasparsd/4g-speed-log/master/preview.png)
 
 ## How it Works
 
