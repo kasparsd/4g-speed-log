@@ -1,5 +1,7 @@
 <?php
 
+chdir( __DIR__ );
+
 $arp = shell_exec('ping -b -c 1 192.168.1.1 && /usr/sbin/arp -n');
 
 if ( false === stripos( $arp, '38:f8:89:01:e2:d0' ) ) {
