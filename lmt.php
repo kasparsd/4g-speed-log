@@ -7,7 +7,7 @@ if ( false === stripos( $arp, '38:f8:89:01:e2:d0' ) ) {
 	die;
 }
 
-exec( '/usr/local/bin/speedtest-cli --simple --server 2148 --share', $results );
+exec( 'php speedtest.php http://speedtest.lmt.lv/speedtest', $results );
 
 if ( count( $results ) < 3 ) {
 	syslog( LOG_ERR, 'LMT Speedtest failed: ' . implode( '|', $results ) );
