@@ -12,7 +12,7 @@ $url_down = $url . '/random4000x4000.jpg';
 if ( ! file_exists( __DIR__ . '/random4000x4000.jpg' ) ) {
 	exec( 'curl -o ' . __DIR__ . '/random4000x4000.jpg ' . $url_down, $_o, $ok );
 
-	if ( ! ok )
+	if ( ! $ok )
 		die( 'Failed to download random4000x4000.jpg from ' . $url_down );
 }
 
