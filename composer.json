@@ -1,0 +1,12 @@
+{
+    "name": "kasparsd/4g-speed-log",
+    "description": "Measure and log internet download, upload and ping speed",
+    "authors": [
+        {
+            "name": "Kaspars Dambis",
+            "email": "hi@kaspars.net"
+        }
+    ],
+    "require": {
+    }
+}
